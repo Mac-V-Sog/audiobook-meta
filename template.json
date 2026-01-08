@@ -2,7 +2,7 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "id": "audible-us-catalogue",
     "name": "Audible US",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "description": "Complete Audible US audiobook catalogue with all categories, bestsellers, new releases, and trending",
     "author": "Audiobook Player Community",
     "attribution": "Powered by Audiobook Meta",
@@ -148,7 +148,84 @@
                     {
                         "name": "History",
                         "categoryId": "18573518011",
-                        "slug": "History-Audiobooks"
+                        "slug": "History-Audiobooks",
+                        "items": [
+                            {
+                                "name": "Africa",
+                                "categoryId": "18573520011",
+                                "slug": "History/Africa-Audiobooks"
+                            },
+                            {
+                                "name": "Americas",
+                                "categoryId": "18573528011",
+                                "slug": "History/Americas-Audiobooks"
+                            },
+                            {
+                                "name": "Ancient",
+                                "categoryId": "18573551011",
+                                "slug": "History/Ancient-Audiobooks"
+                            },
+                            {
+                                "name": "Arctic & Antarctica",
+                                "categoryId": "18573558011",
+                                "slug": "History/Arctic-Antarctica-Audiobooks"
+                            },
+                            {
+                                "name": "Asia",
+                                "categoryId": "18573560011",
+                                "slug": "History/Asia-Audiobooks"
+                            },
+                            {
+                                "name": "Australia & Oceania",
+                                "categoryId": "18573568011",
+                                "slug": "History/Australia-New-Zealand-Oceania-Audiobooks"
+                            },
+                            {
+                                "name": "Europe",
+                                "categoryId": "18573574011",
+                                "slug": "History/Europe-Audiobooks"
+                            },
+                            {
+                                "name": "LGBTQ+",
+                                "categoryId": "18573743011",
+                                "slug": "History/LGBTQ-Audiobooks"
+                            },
+                            {
+                                "name": "Middle East",
+                                "categoryId": "18573616011",
+                                "slug": "History/Middle-East-Audiobooks"
+                            },
+                            {
+                                "name": "Military",
+                                "categoryId": "18573625011",
+                                "slug": "History/Military-Audiobooks"
+                            },
+                            {
+                                "name": "Modern",
+                                "categoryId": "18573656011",
+                                "slug": "History/Modern-Audiobooks"
+                            },
+                            {
+                                "name": "Religious",
+                                "categoryId": "18574839011",
+                                "slug": "History/Religious-Audiobooks"
+                            },
+                            {
+                                "name": "Russia",
+                                "categoryId": "18573646011",
+                                "slug": "History/Russia-Audiobooks"
+                            },
+                            {
+                                "name": "Women",
+                                "categoryId": "18573886011",
+                                "slug": "History/Women-Audiobooks"
+                            },
+                            {
+                                "name": "World",
+                                "categoryId": "18573686011",
+                                "slug": "History/World-Audiobooks"
+                            }
+                        ]
                     },
                     {
                         "name": "Home & Garden",
