@@ -5,7 +5,7 @@
     "version": "2.0.0",
     "description": "Complete Audible US audiobook catalogue with all categories, bestsellers, new releases, and trending",
     "author": "Audiobook Player Community",
-    "attribution": "Powered by Audible",
+    "attribution": "Powered by Audiobook Meta",
     "region": "us",
     "api": {
         "baseUrl": "https://api.audible.com",
@@ -337,6 +337,7 @@
             "path": "/1.0/catalog/products",
             "method": "GET",
             "queryParams": {
+                "products_sort_by": "BestSellers",
                 "num_results": "50",
                 "response_groups": "{responseGroups}"
             }
@@ -345,6 +346,7 @@
             "path": "/1.0/catalog/products",
             "method": "GET",
             "queryParams": {
+                "products_sort_by": "AvgRating",
                 "num_results": "50",
                 "response_groups": "{responseGroups}"
             }
@@ -353,6 +355,7 @@
             "path": "/1.0/catalog/products",
             "method": "GET",
             "queryParams": {
+                "products_sort_by": "-ReleaseDate",
                 "num_results": "50",
                 "response_groups": "{responseGroups}"
             }
@@ -361,6 +364,7 @@
             "path": "/1.0/catalog/products",
             "method": "GET",
             "queryParams": {
+                "products_sort_by": "ProductSiteLaunchDate",
                 "num_results": "50",
                 "response_groups": "{responseGroups}"
             }
