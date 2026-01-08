@@ -296,7 +296,6 @@
             "queryParams": {
                 "keywords": "{query}",
                 "num_results": "20",
-                "products_sort_by": "Relevance",
                 "response_groups": "{responseGroups}"
             }
         },
@@ -313,7 +312,6 @@
             "queryParams": {
                 "category_id": "{categoryId}",
                 "num_results": "50",
-                "products_sort_by": "Relevance",
                 "response_groups": "{responseGroups}"
             }
         },
@@ -323,7 +321,6 @@
             "queryParams": {
                 "author": "{authorId}",
                 "num_results": "50",
-                "products_sort_by": "MostHelpful",
                 "response_groups": "{responseGroups}"
             }
         },
@@ -340,17 +337,14 @@
             "path": "/1.0/catalog/products",
             "method": "GET",
             "queryParams": {
-                "products_sort_by": "Popularity",
                 "num_results": "50",
                 "response_groups": "{responseGroups}"
-            },
-            "note": "For true bestsellers, scrape /charts/best and then fetch details"
+            }
         },
         "chartsTrending": {
             "path": "/1.0/catalog/products",
             "method": "GET",
             "queryParams": {
-                "products_sort_by": "MostListened",
                 "num_results": "50",
                 "response_groups": "{responseGroups}"
             }
@@ -359,7 +353,6 @@
             "path": "/1.0/catalog/products",
             "method": "GET",
             "queryParams": {
-                "products_sort_by": "-ReleaseDate",
                 "num_results": "50",
                 "response_groups": "{responseGroups}"
             }
@@ -368,8 +361,6 @@
             "path": "/1.0/catalog/products",
             "method": "GET",
             "queryParams": {
-                "products_sort_by": "ReleaseDate",
-                "release_after": "{today}",
                 "num_results": "50",
                 "response_groups": "{responseGroups}"
             }
