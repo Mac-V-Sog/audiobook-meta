@@ -787,7 +787,7 @@
             "path": "/1.0/catalog/products",
             "method": "GET",
             "queryParams": {
-                "author": "{authorId}",
+                "author": "{authorName}",
                 "num_results": "50",
                 "response_groups": "{responseGroups}"
             }
