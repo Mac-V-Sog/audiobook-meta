@@ -1,0 +1,1461 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "id": "audible-uk-catalogue",
+    "name": "Audible UK",
+    "version": "2.0.3",
+    "description": "Complete Audible US audiobook catalogue with all categories, bestsellers, new releases, and trending",
+    "author": "Audiobook Player Community",
+    "attribution": "Powered by Audiobook Meta",
+    "region": "us",
+    "api": {
+        "baseUrl": "https://api.audible.co.uk",
+        "webBaseUrl": "https://www.audible.co.uk",
+        "headers": {
+            "Accept": "application/json",
+            "Accept-Language": "en-US,en;q=0.9",
+            "User-Agent": "Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
+        },
+        "timeout": 30000
+    },
+    "responseGroups": [
+        "category_ladders",
+        "contributors",
+        "media",
+        "product_attrs",
+        "product_desc",
+        "product_details",
+        "product_extended_attrs",
+        "rating",
+        "series"
+    ],
+    "feeds": [
+        {
+            "id": "bestsellers",
+            "name": "Best Sellers",
+            "type": "horizontal",
+            "endpoint": "chartsBestsellers",
+            "showOnHome": true,
+            "order": 1,
+            "limit": 20,
+            "icon": "trophy"
+        },
+        {
+            "id": "trending",
+            "name": "Trending Now",
+            "type": "horizontal",
+            "endpoint": "chartsTrending",
+            "showOnHome": true,
+            "order": 2,
+            "limit": 20,
+            "icon": "trending-up"
+        },
+        {
+            "id": "new-releases",
+            "name": "New Releases",
+            "type": "horizontal",
+            "endpoint": "newReleases",
+            "showOnHome": true,
+            "order": 3,
+            "limit": 20,
+            "icon": "sparkles"
+        },
+        {
+            "id": "coming-soon",
+            "name": "Coming Soon",
+            "type": "horizontal",
+            "endpoint": "comingSoon",
+            "showOnHome": true,
+            "order": 4,
+            "limit": 20,
+            "icon": "calendar"
+        }
+    ],
+    "menu": {
+        "sections": [
+            {
+                "name": "Browse",
+                "items": [
+                    {
+                        "name": "Best Sellers",
+                        "feedId": "bestsellers",
+                        "icon": "trophy"
+                    },
+                    {
+                        "name": "Trending Now",
+                        "feedId": "trending",
+                        "icon": "trending-up"
+                    },
+                    {
+                        "name": "New Releases",
+                        "feedId": "new-releases",
+                        "icon": "sparkles"
+                    },
+                    {
+                        "name": "Coming Soon",
+                        "feedId": "coming-soon",
+                        "icon": "calendar"
+                    }
+                ]
+            },
+            {
+                "name": "Categories",
+                "items": [
+                    {
+                        "name": "Arts & Entertainment",
+                        "categoryId": "18571910011",
+                        "slug": "Arts-Entertainment-Audiobooks",
+                        "items": [
+                            {
+                                "name": "Architecture",
+                                "categoryId": "18571912011",
+                                "slug": "Architecture-Audiobooks"
+                            },
+                            {
+                                "name": "Art",
+                                "categoryId": "18571913011",
+                                "slug": "Art-Audiobooks"
+                            },
+                            {
+                                "name": "Music",
+                                "categoryId": "18571942011",
+                                "slug": "Music-Audiobooks"
+                            },
+                            {
+                                "name": "Performing Arts",
+                                "categoryId": "18571946011",
+                                "slug": "Performing-Arts-Audiobooks"
+                            },
+                            {
+                                "name": "Photography",
+                                "categoryId": "18571948011",
+                                "slug": "Photography-Audiobooks"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Biographies & Memoirs",
+                        "categoryId": "18571951011",
+                        "slug": "Biographies-Memoirs-Audiobooks",
+                        "items": [
+                            {
+                                "name": "Historical",
+                                "categoryId": "18571990011",
+                                "slug": "Historical-Biographies-Audiobooks"
+                            },
+                            {
+                                "name": "Leaders & Notable People",
+                                "categoryId": "18572001011",
+                                "slug": "Leaders-Notable-People-Audiobooks"
+                            },
+                            {
+                                "name": "True Crime",
+                                "categoryId": "18572017011",
+                                "slug": "True-Crime-Biographies-Audiobooks"
+                            },
+                            {
+                                "name": "Memoirs",
+                                "categoryId": "18572004011",
+                                "slug": "Memoirs-Audiobooks"
+                            },
+                            {
+                                "name": "Personal Memoirs",
+                                "categoryId": "18572010011",
+                                "slug": "Personal-Memoirs-Audiobooks"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Business & Careers",
+                        "categoryId": "18572029011",
+                        "slug": "Business-Careers-Audiobooks",
+                        "items": [
+                            {
+                                "name": "Careers",
+                                "categoryId": "18572034011",
+                                "slug": "Careers-Audiobooks"
+                            },
+                            {
+                                "name": "Economics",
+                                "categoryId": "18572052011",
+                                "slug": "Economics-Audiobooks"
+                            },
+                            {
+                                "name": "Entrepreneurship",
+                                "categoryId": "18572055011",
+                                "slug": "Entrepreneurship-Audiobooks"
+                            },
+                            {
+                                "name": "Management & Leadership",
+                                "categoryId": "18572063011",
+                                "slug": "Management-Leadership-Audiobooks"
+                            },
+                            {
+                                "name": "Marketing & Sales",
+                                "categoryId": "18572071011",
+                                "slug": "Marketing-Sales-Audiobooks"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Children's Audiobooks",
+                        "categoryId": "18572091011",
+                        "slug": "Childrens-Audiobooks",
+                        "items": [
+                            {
+                                "name": "Ages 2-5",
+                                "categoryId": "18572095011",
+                                "slug": "Ages-2-5-Audiobooks"
+                            },
+                            {
+                                "name": "Ages 5-7",
+                                "categoryId": "18572096011",
+                                "slug": "Ages-5-7-Audiobooks"
+                            },
+                            {
+                                "name": "Ages 8-10",
+                                "categoryId": "18572097011",
+                                "slug": "Ages-8-10-Audiobooks"
+                            },
+                            {
+                                "name": "Fairy Tales & Legends",
+                                "categoryId": "18572106011",
+                                "slug": "Fairy-Tales-Legends-Audiobooks"
+                            },
+                            {
+                                "name": "Animals & Nature",
+                                "categoryId": "18573206011",
+                                "slug": "Animals-Nature-Childrens-Audiobooks"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Comedy & Humor",
+                        "categoryId": "24427740011",
+                        "slug": "Comedy-Humor-Audiobooks"
+                    },
+                    {
+                        "name": "Computers & Technology",
+                        "categoryId": "18573211011",
+                        "slug": "Computers-Technology-Audiobooks",
+                        "items": [
+                            {
+                                "name": "Computer Science",
+                                "categoryId": "18573213011",
+                                "slug": "Computer-Science-Audiobooks"
+                            },
+                            {
+                                "name": "Digital Media",
+                                "categoryId": "18573214011",
+                                "slug": "Digital-Media-Audiobooks"
+                            },
+                            {
+                                "name": "Internet & Social Media",
+                                "categoryId": "18573256011",
+                                "slug": "Internet-Social-Media-Audiobooks"
+                            },
+                            {
+                                "name": "Mobile Technology",
+                                "categoryId": "18573257011",
+                                "slug": "Mobile-Technology-Audiobooks"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Education & Learning",
+                        "categoryId": "18573267011",
+                        "slug": "Education-Learning-Audiobooks",
+                        "items": [
+                            {
+                                "name": "Language Learning",
+                                "categoryId": "18573269011",
+                                "slug": "Language-Learning-Audiobooks"
+                            },
+                            {
+                                "name": "Study Aids",
+                                "categoryId": "18573340011",
+                                "slug": "Study-Aids-Audiobooks"
+                            },
+                            {
+                                "name": "Test Preparation",
+                                "categoryId": "18573341011",
+                                "slug": "Test-Preparation-Audiobooks"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Erotica",
+                        "categoryId": "18573351011",
+                        "slug": "Erotica-Audiobooks"
+                    },
+                    {
+                        "name": "Health & Wellness",
+                        "categoryId": "18573370011",
+                        "slug": "Health-Wellness-Audiobooks",
+                        "items": [
+                            {
+                                "name": "Diet & Nutrition",
+                                "categoryId": "18573372011",
+                                "slug": "Diet-Nutrition-Audiobooks"
+                            },
+                            {
+                                "name": "Exercise & Fitness",
+                                "categoryId": "18573425011",
+                                "slug": "Exercise-Fitness-Audiobooks"
+                            },
+                            {
+                                "name": "Psychology & Mental Health",
+                                "categoryId": "18573513011",
+                                "slug": "Psychology-Mental-Health-Audiobooks"
+                            },
+                            {
+                                "name": "Self-Help",
+                                "categoryId": "18573426011",
+                                "slug": "Self-Help-Audiobooks"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "History",
+                        "categoryId": "18573518011",
+                        "slug": "History-Audiobooks",
+                        "items": [
+                            {
+                                "name": "Africa",
+                                "categoryId": "18573519011",
+                                "slug": "Africa-History-Audiobooks"
+                            },
+                            {
+                                "name": "Americas",
+                                "categoryId": "18573535011",
+                                "slug": "Americas-History-Audiobooks"
+                            },
+                            {
+                                "name": "Ancient",
+                                "categoryId": "18573559011",
+                                "slug": "Ancient-History-Audiobooks"
+                            },
+                            {
+                                "name": "Europe",
+                                "categoryId": "18573582011",
+                                "slug": "Europe-History-Audiobooks"
+                            },
+                            {
+                                "name": "Military",
+                                "categoryId": "18573647011",
+                                "slug": "Military-History-Audiobooks"
+                            },
+                            {
+                                "name": "World",
+                                "categoryId": "18573695011",
+                                "slug": "World-History-Audiobooks"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Home & Garden",
+                        "categoryId": "18573701011",
+                        "slug": "Home-Garden-Audiobooks"
+                    },
+                    {
+                        "name": "LGBTQ+",
+                        "categoryId": "18573743011",
+                        "slug": "LGBTQ-Audiobooks"
+                    },
+                    {
+                        "name": "Literature & Fiction",
+                        "categoryId": "18574426011",
+                        "slug": "Literature-Fiction-Audiobooks",
+                        "items": [
+                            {
+                                "name": "Contemporary Fiction",
+                                "categoryId": "18574456011",
+                                "slug": "Contemporary-Fiction-Audiobooks"
+                            },
+                            {
+                                "name": "Classics",
+                                "categoryId": "18574463011",
+                                "slug": "Classics-Fiction-Audiobooks"
+                            },
+                            {
+                                "name": "Historical Fiction",
+                                "categoryId": "18574482011",
+                                "slug": "Historical-Fiction-Audiobooks"
+                            },
+                            {
+                                "name": "Humor & Satire",
+                                "categoryId": "18574489011",
+                                "slug": "Humor-Satire-Fiction-Audiobooks"
+                            },
+                            {
+                                "name": "Literary Fiction",
+                                "categoryId": "18574500011",
+                                "slug": "Literary-Fiction-Audiobooks"
+                            },
+                            {
+                                "name": "Short Stories",
+                                "categoryId": "18574513011",
+                                "slug": "Short-Stories-Audiobooks"
+                            },
+                            {
+                                "name": "Women's Fiction",
+                                "categoryId": "18574546011",
+                                "slug": "Womens-Fiction-Audiobooks"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Money & Finance",
+                        "categoryId": "18574547011",
+                        "slug": "Money-Finance-Audiobooks",
+                        "items": [
+                            {
+                                "name": "Investing",
+                                "categoryId": "18574548011",
+                                "slug": "Investing-Audiobooks"
+                            },
+                            {
+                                "name": "Personal Finance",
+                                "categoryId": "18574549011",
+                                "slug": "Personal-Finance-Audiobooks"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mystery, Thriller & Suspense",
+                        "categoryId": "18574597011",
+                        "slug": "Mystery-Thriller-Suspense-Audiobooks",
+                        "items": [
+                            {
+                                "name": "Crime Fiction",
+                                "categoryId": "18574598011",
+                                "slug": "Crime-Fiction-Audiobooks"
+                            },
+                            {
+                                "name": "True Crime",
+                                "categoryId": "18574600011",
+                                "slug": "True-Crime-Audiobooks"
+                            },
+                            {
+                                "name": "Mystery",
+                                "categoryId": "18574610011",
+                                "slug": "Mystery-Audiobooks"
+                            },
+                            {
+                                "name": "Thrillers",
+                                "categoryId": "18574622011",
+                                "slug": "Thrillers-Audiobooks"
+                            },
+                            {
+                                "name": "Suspense",
+                                "categoryId": "18574638011",
+                                "slug": "Suspense-Audiobooks"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Politics & Social Sciences",
+                        "categoryId": "18574641011",
+                        "slug": "Politics-Social-Sciences-Audiobooks",
+                        "items": [
+                            {
+                                "name": "Philosophy",
+                                "categoryId": "18574642011",
+                                "slug": "Philosophy-Audiobooks"
+                            },
+                            {
+                                "name": "Political Science",
+                                "categoryId": "18574660011",
+                                "slug": "Political-Science-Audiobooks"
+                            },
+                            {
+                                "name": "Social Sciences",
+                                "categoryId": "18574672011",
+                                "slug": "Social-Sciences-Audiobooks"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Relationships & Personal Development",
+                        "categoryId": "18574784011",
+                        "slug": "Relationships-Personal-Development-Audiobooks",
+                        "items": [
+                            {
+                                "name": "Communication & Social Skills",
+                                "categoryId": "18574785011",
+                                "slug": "Communication-Social-Skills-Audiobooks"
+                            },
+                            {
+                                "name": "Dating",
+                                "categoryId": "18574786011",
+                                "slug": "Dating-Audiobooks"
+                            },
+                            {
+                                "name": "Personal Transformation",
+                                "categoryId": "18574833011",
+                                "slug": "Personal-Transformation-Audiobooks"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Religion & Spirituality",
+                        "categoryId": "18574839011",
+                        "slug": "Religion-Spirituality-Audiobooks",
+                        "items": [
+                            {
+                                "name": "Buddhism",
+                                "categoryId": "18574840011",
+                                "slug": "Buddhism-Audiobooks"
+                            },
+                            {
+                                "name": "Christianity",
+                                "categoryId": "18574841011",
+                                "slug": "Christianity-Audiobooks"
+                            },
+                            {
+                                "name": "Islam",
+                                "categoryId": "18574849011",
+                                "slug": "Islam-Audiobooks"
+                            },
+                            {
+                                "name": "Judaism",
+                                "categoryId": "18574852011",
+                                "slug": "Judaism-Audiobooks"
+                            },
+                            {
+                                "name": "New Age & Spirituality",
+                                "categoryId": "18574863011",
+                                "slug": "New-Age-Spirituality-Audiobooks"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Romance",
+                        "categoryId": "18580518011",
+                        "slug": "Romance-Audiobooks",
+                        "items": [
+                            {
+                                "name": "Contemporary",
+                                "categoryId": "18580519011",
+                                "slug": "Contemporary-Romance-Audiobooks"
+                            },
+                            {
+                                "name": "Historical",
+                                "categoryId": "18580525011",
+                                "slug": "Historical-Romance-Audiobooks"
+                            },
+                            {
+                                "name": "Paranormal",
+                                "categoryId": "18580527011",
+                                "slug": "Paranormal-Romance-Audiobooks"
+                            },
+                            {
+                                "name": "Romantic Comedy",
+                                "categoryId": "18580530011",
+                                "slug": "Romantic-Comedy-Audiobooks"
+                            },
+                            {
+                                "name": "Romantic Suspense",
+                                "categoryId": "18580535011",
+                                "slug": "Romantic-Suspense-Audiobooks"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Science & Engineering",
+                        "categoryId": "18580540011",
+                        "slug": "Science-Engineering-Audiobooks",
+                        "items": [
+                            {
+                                "name": "Astronomy & Space Science",
+                                "categoryId": "18580541011",
+                                "slug": "Astronomy-Space-Science-Audiobooks"
+                            },
+                            {
+                                "name": "Biology",
+                                "categoryId": "18580552011",
+                                "slug": "Biology-Audiobooks"
+                            },
+                            {
+                                "name": "Physics",
+                                "categoryId": "18580580011",
+                                "slug": "Physics-Audiobooks"
+                            },
+                            {
+                                "name": "Technology & Engineering",
+                                "categoryId": "18580605011",
+                                "slug": "Technology-Engineering-Audiobooks"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Science Fiction & Fantasy",
+                        "categoryId": "18580606011",
+                        "slug": "Science-Fiction-Fantasy-Audiobooks",
+                        "items": [
+                            {
+                                "name": "Fantasy",
+                                "categoryId": "18580607011",
+                                "slug": "Fantasy-Audiobooks"
+                            },
+                            {
+                                "name": "Epic Fantasy",
+                                "categoryId": "18580608011",
+                                "slug": "Epic-Fantasy-Audiobooks"
+                            },
+                            {
+                                "name": "Urban Fantasy",
+                                "categoryId": "18580617011",
+                                "slug": "Urban-Fantasy-Audiobooks"
+                            },
+                            {
+                                "name": "Science Fiction",
+                                "categoryId": "18580628011",
+                                "slug": "Science-Fiction-Audiobooks"
+                            },
+                            {
+                                "name": "Dystopian",
+                                "categoryId": "18580629011",
+                                "slug": "Dystopian-Audiobooks"
+                            },
+                            {
+                                "name": "Space Opera",
+                                "categoryId": "18580639011",
+                                "slug": "Space-Opera-Audiobooks"
+                            },
+                            {
+                                "name": "Time Travel",
+                                "categoryId": "18580645011",
+                                "slug": "Time-Travel-Audiobooks"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Sports & Outdoors",
+                        "categoryId": "18580648011",
+                        "slug": "Sports-Outdoors-Audiobooks",
+                        "items": [
+                            {
+                                "name": "Baseball",
+                                "categoryId": "18580649011",
+                                "slug": "Baseball-Audiobooks"
+                            },
+                            {
+                                "name": "Basketball",
+                                "categoryId": "18580679011",
+                                "slug": "Basketball-Audiobooks"
+                            },
+                            {
+                                "name": "Football",
+                                "categoryId": "18580697011",
+                                "slug": "Football-Audiobooks"
+                            },
+                            {
+                                "name": "Outdoors & Nature",
+                                "categoryId": "18580713011",
+                                "slug": "Outdoors-Nature-Audiobooks"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Teen & Young Adult",
+                        "categoryId": "18580715011",
+                        "slug": "Teen-Young-Adult-Audiobooks",
+                        "items": [
+                            {
+                                "name": "Action & Adventure",
+                                "categoryId": "18580716011",
+                                "slug": "Teen-Action-Adventure-Audiobooks"
+                            },
+                            {
+                                "name": "Fantasy",
+                                "categoryId": "18580768011",
+                                "slug": "Teen-Fantasy-Audiobooks"
+                            },
+                            {
+                                "name": "Romance",
+                                "categoryId": "18580790011",
+                                "slug": "Teen-Romance-Audiobooks"
+                            },
+                            {
+                                "name": "Science Fiction",
+                                "categoryId": "18581055011",
+                                "slug": "Teen-Science-Fiction-Audiobooks"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Travel & Tourism",
+                        "categoryId": "18581095011",
+                        "slug": "Travel-Tourism-Audiobooks"
+                    }
+                ]
+            },
+            {
+                "name": "Popular Subcategories",
+                "items": [
+                    {
+                        "name": "Fantasy",
+                        "categoryId": "18580607011",
+                        "slug": "Science-Fiction-Fantasy/Fantasy-Audiobooks",
+                        "parent": "Science Fiction & Fantasy"
+                    },
+                    {
+                        "name": "Science Fiction",
+                        "categoryId": "18580628011",
+                        "slug": "Science-Fiction-Fantasy/Science-Fiction-Audiobooks",
+                        "parent": "Science Fiction & Fantasy"
+                    },
+                    {
+                        "name": "Historical Fiction",
+                        "categoryId": "18574482011",
+                        "slug": "Literature-Fiction/Historical-Fiction-Audiobooks",
+                        "parent": "Literature & Fiction"
+                    },
+                    {
+                        "name": "Contemporary Fiction",
+                        "categoryId": "18574456011",
+                        "slug": "Literature-Fiction/Contemporary-Fiction-Audiobooks",
+                        "parent": "Literature & Fiction"
+                    },
+                    {
+                        "name": "True Crime",
+                        "categoryId": "18574600011",
+                        "slug": "Mystery-Thriller-Suspense/True-Crime-Audiobooks",
+                        "parent": "Mystery, Thriller & Suspense"
+                    },
+                    {
+                        "name": "Thrillers",
+                        "categoryId": "18574622011",
+                        "slug": "Mystery-Thriller-Suspense/Thrillers-Audiobooks",
+                        "parent": "Mystery, Thriller & Suspense"
+                    },
+                    {
+                        "name": "Contemporary Romance",
+                        "categoryId": "18580519011",
+                        "slug": "Romance/Contemporary-Romance-Audiobooks",
+                        "parent": "Romance"
+                    },
+                    {
+                        "name": "Historical Romance",
+                        "categoryId": "18580525011",
+                        "slug": "Romance/Historical-Romance-Audiobooks",
+                        "parent": "Romance"
+                    },
+                    {
+                        "name": "Personal Development",
+                        "categoryId": "18574785011",
+                        "slug": "Self-Development-Audiobooks",
+                        "parent": "Self Development"
+                    },
+                    {
+                        "name": "Self-Help",
+                        "categoryId": "18574810011",
+                        "slug": "Health-Wellness/Self-Help-Audiobooks",
+                        "parent": "Health & Wellness"
+                    }
+                ]
+            }
+        ]
+    },
+    "endpoints": {
+        "search": {
+            "path": "/1.0/catalog/products",
+            "method": "GET",
+            "queryParams": {
+                "keywords": "{query}",
+                "num_results": "20",
+                "response_groups": "{responseGroups}"
+            }
+        },
+        "bookDetails": {
+            "path": "/1.0/catalog/products/{id}",
+            "method": "GET",
+            "queryParams": {
+                "response_groups": "{responseGroups}"
+            }
+        },
+        "categoryBooks": {
+            "path": "/1.0/catalog/products",
+            "method": "GET",
+            "queryParams": {
+                "category_id": "{categoryId}",
+                "num_results": "50",
+                "response_groups": "{responseGroups}"
+            }
+        },
+        "author": {
+            "path": "/1.0/catalog/products",
+            "method": "GET",
+            "queryParams": {
+                "author": "{authorName}",
+                "num_results": "50",
+                "response_groups": "{responseGroups}"
+            }
+        },
+        "series": {
+            "path": "/1.0/catalog/products/{bookId}/sims",
+            "method": "GET",
+            "queryParams": {
+                "similarity_type": "InTheSameSeries",
+                "num_results": "50",
+                "response_groups": "{responseGroups}"
+            }
+        },
+        "chartsBestsellers": {
+            "path": "/1.0/catalog/products",
+            "method": "GET",
+            "queryParams": {
+                "products_sort_by": "BestSellers",
+                "num_results": "50",
+                "response_groups": "{responseGroups}"
+            }
+        },
+        "chartsTrending": {
+            "path": "/1.0/catalog/products",
+            "method": "GET",
+            "queryParams": {
+                "products_sort_by": "AvgRating",
+                "num_results": "50",
+                "response_groups": "{responseGroups}"
+            }
+        },
+        "newReleases": {
+            "path": "/1.0/catalog/products",
+            "method": "GET",
+            "queryParams": {
+                "products_sort_by": "-ReleaseDate",
+                "num_results": "50",
+                "response_groups": "{responseGroups}"
+            }
+        },
+        "comingSoon": {
+            "path": "/1.0/catalog/products",
+            "method": "GET",
+            "queryParams": {
+                "products_sort_by": "ProductSiteLaunchDate",
+                "num_results": "50",
+                "response_groups": "{responseGroups}"
+            }
+        }
+    },
+    "fieldMappings": {
+        "id": "asin",
+        "title": "title",
+        "subtitle": "subtitle",
+        "description": "publisher_summary",
+        "imageUrl": "product_images.500",
+        "authors": "authors",
+        "authorName": "name",
+        "authorId": "asin",
+        "narrators": "narrators",
+        "narratorName": "name",
+        "narratorId": "asin",
+        "series": "series",
+        "seriesName": "title",
+        "seriesId": "asin",
+        "seriesPosition": "sequence",
+        "rating": "rating.overall_distribution.display_average_rating",
+        "ratingCount": "rating.overall_distribution.num_ratings",
+        "releaseDate": "release_date",
+        "duration": "runtime_length_min",
+        "runtimeMinutes": "runtime_length_min",
+        "genres": "category_ladders.0.ladder.*.name",
+        "publisher": "publisher_name",
+        "language": "language"
+    },
+    "categories": [
+        {
+            "id": "18571910011",
+            "name": "Arts & Entertainment",
+            "slug": "Arts-Entertainment-Audiobooks",
+            "subcategories": [
+                {
+                    "id": "18571912011",
+                    "name": "Architecture",
+                    "slug": "Architecture-Audiobooks"
+                },
+                {
+                    "id": "18571913011",
+                    "name": "Art",
+                    "slug": "Art-Audiobooks"
+                },
+                {
+                    "id": "18571942011",
+                    "name": "Music",
+                    "slug": "Music-Audiobooks"
+                },
+                {
+                    "id": "18571946011",
+                    "name": "Performing Arts",
+                    "slug": "Performing-Arts-Audiobooks"
+                },
+                {
+                    "id": "18571948011",
+                    "name": "Photography",
+                    "slug": "Photography-Audiobooks"
+                }
+            ]
+        },
+        {
+            "id": "18571951011",
+            "name": "Biographies & Memoirs",
+            "slug": "Biographies-Memoirs-Audiobooks",
+            "subcategories": [
+                {
+                    "id": "18571990011",
+                    "name": "Historical",
+                    "slug": "Historical-Biographies-Audiobooks"
+                },
+                {
+                    "id": "18572001011",
+                    "name": "Leaders & Notable People",
+                    "slug": "Leaders-Notable-People-Audiobooks"
+                },
+                {
+                    "id": "18572017011",
+                    "name": "True Crime",
+                    "slug": "True-Crime-Biographies-Audiobooks"
+                },
+                {
+                    "id": "18572004011",
+                    "name": "Memoirs",
+                    "slug": "Memoirs-Audiobooks"
+                },
+                {
+                    "id": "18572010011",
+                    "name": "Personal Memoirs",
+                    "slug": "Personal-Memoirs-Audiobooks"
+                }
+            ]
+        },
+        {
+            "id": "18572029011",
+            "name": "Business & Careers",
+            "slug": "Business-Careers-Audiobooks",
+            "subcategories": [
+                {
+                    "id": "18572034011",
+                    "name": "Careers",
+                    "slug": "Careers-Audiobooks"
+                },
+                {
+                    "id": "18572052011",
+                    "name": "Economics",
+                    "slug": "Economics-Audiobooks"
+                },
+                {
+                    "id": "18572055011",
+                    "name": "Entrepreneurship",
+                    "slug": "Entrepreneurship-Audiobooks"
+                },
+                {
+                    "id": "18572063011",
+                    "name": "Management & Leadership",
+                    "slug": "Management-Leadership-Audiobooks"
+                },
+                {
+                    "id": "18572071011",
+                    "name": "Marketing & Sales",
+                    "slug": "Marketing-Sales-Audiobooks"
+                }
+            ]
+        },
+        {
+            "id": "18572091011",
+            "name": "Children's Audiobooks",
+            "slug": "Childrens-Audiobooks",
+            "subcategories": [
+                {
+                    "id": "18572095011",
+                    "name": "Ages 2-5",
+                    "slug": "Ages-2-5-Audiobooks"
+                },
+                {
+                    "id": "18572096011",
+                    "name": "Ages 5-7",
+                    "slug": "Ages-5-7-Audiobooks"
+                },
+                {
+                    "id": "18572097011",
+                    "name": "Ages 8-10",
+                    "slug": "Ages-8-10-Audiobooks"
+                },
+                {
+                    "id": "18572106011",
+                    "name": "Fairy Tales & Legends",
+                    "slug": "Fairy-Tales-Legends-Audiobooks"
+                },
+                {
+                    "id": "18573206011",
+                    "name": "Animals & Nature",
+                    "slug": "Animals-Nature-Childrens-Audiobooks"
+                }
+            ]
+        },
+        {
+            "id": "24427740011",
+            "name": "Comedy & Humor",
+            "slug": "Comedy-Humor-Audiobooks",
+            "subcategories": []
+        },
+        {
+            "id": "18573211011",
+            "name": "Computers & Technology",
+            "slug": "Computers-Technology-Audiobooks",
+            "subcategories": [
+                {
+                    "id": "18573213011",
+                    "name": "Computer Science",
+                    "slug": "Computer-Science-Audiobooks"
+                },
+                {
+                    "id": "18573214011",
+                    "name": "Digital Media",
+                    "slug": "Digital-Media-Audiobooks"
+                },
+                {
+                    "id": "18573256011",
+                    "name": "Internet & Social Media",
+                    "slug": "Internet-Social-Media-Audiobooks"
+                },
+                {
+                    "id": "18573257011",
+                    "name": "Mobile Technology",
+                    "slug": "Mobile-Technology-Audiobooks"
+                }
+            ]
+        },
+        {
+            "id": "18573267011",
+            "name": "Education & Learning",
+            "slug": "Education-Learning-Audiobooks",
+            "subcategories": [
+                {
+                    "id": "18573269011",
+                    "name": "Language Learning",
+                    "slug": "Language-Learning-Audiobooks"
+                },
+                {
+                    "id": "18573340011",
+                    "name": "Study Aids",
+                    "slug": "Study-Aids-Audiobooks"
+                },
+                {
+                    "id": "18573341011",
+                    "name": "Test Preparation",
+                    "slug": "Test-Preparation-Audiobooks"
+                }
+            ]
+        },
+        {
+            "id": "18573351011",
+            "name": "Erotica",
+            "slug": "Erotica-Audiobooks",
+            "subcategories": []
+        },
+        {
+            "id": "18573370011",
+            "name": "Health & Wellness",
+            "slug": "Health-Wellness-Audiobooks",
+            "subcategories": [
+                {
+                    "id": "18573372011",
+                    "name": "Diet & Nutrition",
+                    "slug": "Diet-Nutrition-Audiobooks"
+                },
+                {
+                    "id": "18573425011",
+                    "name": "Exercise & Fitness",
+                    "slug": "Exercise-Fitness-Audiobooks"
+                },
+                {
+                    "id": "18573513011",
+                    "name": "Psychology & Mental Health",
+                    "slug": "Psychology-Mental-Health-Audiobooks"
+                },
+                {
+                    "id": "18573426011",
+                    "name": "Self-Help",
+                    "slug": "Self-Help-Audiobooks"
+                }
+            ]
+        },
+        {
+            "id": "18573518011",
+            "name": "History",
+            "slug": "History-Audiobooks",
+            "subcategories": [
+                {
+                    "id": "18573519011",
+                    "name": "Africa",
+                    "slug": "Africa-History-Audiobooks"
+                },
+                {
+                    "id": "18573535011",
+                    "name": "Americas",
+                    "slug": "Americas-History-Audiobooks"
+                },
+                {
+                    "id": "18573559011",
+                    "name": "Ancient",
+                    "slug": "Ancient-History-Audiobooks"
+                },
+                {
+                    "id": "18573597011",
+                    "name": "Europe",
+                    "slug": "Europe-History-Audiobooks"
+                },
+                {
+                    "id": "18573683011",
+                    "name": "Military",
+                    "slug": "Military-History-Audiobooks"
+                },
+                {
+                    "id": "18573700011",
+                    "name": "World",
+                    "slug": "World-History-Audiobooks"
+                }
+            ]
+        },
+        {
+            "id": "18573701011",
+            "name": "Home & Garden",
+            "slug": "Home-Garden-Audiobooks",
+            "subcategories": []
+        },
+        {
+            "id": "18573743011",
+            "name": "LGBTQ+",
+            "slug": "LGBTQ-Audiobooks",
+            "subcategories": []
+        },
+        {
+            "id": "18574426011",
+            "name": "Literature & Fiction",
+            "slug": "Literature-Fiction-Audiobooks",
+            "subcategories": [
+                {
+                    "id": "18574456011",
+                    "name": "Contemporary Fiction",
+                    "slug": "Contemporary-Fiction-Audiobooks"
+                },
+                {
+                    "id": "18574463011",
+                    "name": "Classics",
+                    "slug": "Classics-Fiction-Audiobooks"
+                },
+                {
+                    "id": "18574482011",
+                    "name": "Historical Fiction",
+                    "slug": "Historical-Fiction-Audiobooks"
+                },
+                {
+                    "id": "18574489011",
+                    "name": "Humor & Satire",
+                    "slug": "Humor-Satire-Fiction-Audiobooks"
+                },
+                {
+                    "id": "18574500011",
+                    "name": "Literary Fiction",
+                    "slug": "Literary-Fiction-Audiobooks"
+                },
+                {
+                    "id": "18574513011",
+                    "name": "Short Stories",
+                    "slug": "Short-Stories-Audiobooks"
+                },
+                {
+                    "id": "18574546011",
+                    "name": "Women's Fiction",
+                    "slug": "Womens-Fiction-Audiobooks"
+                }
+            ]
+        },
+        {
+            "id": "18574547011",
+            "name": "Money & Finance",
+            "slug": "Money-Finance-Audiobooks",
+            "subcategories": [
+                {
+                    "id": "18574548011",
+                    "name": "Investing",
+                    "slug": "Investing-Audiobooks"
+                },
+                {
+                    "id": "18574549011",
+                    "name": "Personal Finance",
+                    "slug": "Personal-Finance-Audiobooks"
+                }
+            ]
+        },
+        {
+            "id": "18574597011",
+            "name": "Mystery, Thriller & Suspense",
+            "slug": "Mystery-Thriller-Suspense-Audiobooks",
+            "subcategories": [
+                {
+                    "id": "18574598011",
+                    "name": "Crime Fiction",
+                    "slug": "Crime-Fiction-Audiobooks"
+                },
+                {
+                    "id": "18574600011",
+                    "name": "True Crime",
+                    "slug": "True-Crime-Audiobooks"
+                },
+                {
+                    "id": "18574610011",
+                    "name": "Mystery",
+                    "slug": "Mystery-Audiobooks"
+                },
+                {
+                    "id": "18574622011",
+                    "name": "Thrillers",
+                    "slug": "Thrillers-Audiobooks"
+                },
+                {
+                    "id": "18574638011",
+                    "name": "Suspense",
+                    "slug": "Suspense-Audiobooks"
+                }
+            ]
+        },
+        {
+            "id": "18574641011",
+            "name": "Politics & Social Sciences",
+            "slug": "Politics-Social-Sciences-Audiobooks",
+            "subcategories": [
+                {
+                    "id": "18574642011",
+                    "name": "Philosophy",
+                    "slug": "Philosophy-Audiobooks"
+                },
+                {
+                    "id": "18574660011",
+                    "name": "Political Science",
+                    "slug": "Political-Science-Audiobooks"
+                },
+                {
+                    "id": "18574672011",
+                    "name": "Social Sciences",
+                    "slug": "Social-Sciences-Audiobooks"
+                }
+            ]
+        },
+        {
+            "id": "18574784011",
+            "name": "Relationships & Personal Development",
+            "slug": "Relationships-Personal-Development-Audiobooks",
+            "subcategories": [
+                {
+                    "id": "18574785011",
+                    "name": "Communication & Social Skills",
+                    "slug": "Communication-Social-Skills-Audiobooks"
+                },
+                {
+                    "id": "18574786011",
+                    "name": "Dating",
+                    "slug": "Dating-Audiobooks"
+                },
+                {
+                    "id": "18574833011",
+                    "name": "Personal Transformation",
+                    "slug": "Personal-Transformation-Audiobooks"
+                }
+            ]
+        },
+        {
+            "id": "18574839011",
+            "name": "Religion & Spirituality",
+            "slug": "Religion-Spirituality-Audiobooks",
+            "subcategories": [
+                {
+                    "id": "18574840011",
+                    "name": "Buddhism",
+                    "slug": "Buddhism-Audiobooks"
+                },
+                {
+                    "id": "18574841011",
+                    "name": "Christianity",
+                    "slug": "Christianity-Audiobooks"
+                },
+                {
+                    "id": "18574849011",
+                    "name": "Islam",
+                    "slug": "Islam-Audiobooks"
+                },
+                {
+                    "id": "18574852011",
+                    "name": "Judaism",
+                    "slug": "Judaism-Audiobooks"
+                },
+                {
+                    "id": "18574863011",
+                    "name": "New Age & Spirituality",
+                    "slug": "New-Age-Spirituality-Audiobooks"
+                }
+            ]
+        },
+        {
+            "id": "18580518011",
+            "name": "Romance",
+            "slug": "Romance-Audiobooks",
+            "subcategories": [
+                {
+                    "id": "18580519011",
+                    "name": "Contemporary",
+                    "slug": "Contemporary-Romance-Audiobooks"
+                },
+                {
+                    "id": "18580525011",
+                    "name": "Historical",
+                    "slug": "Historical-Romance-Audiobooks"
+                },
+                {
+                    "id": "18580527011",
+                    "name": "Paranormal",
+                    "slug": "Paranormal-Romance-Audiobooks"
+                },
+                {
+                    "id": "18580530011",
+                    "name": "Romantic Comedy",
+                    "slug": "Romantic-Comedy-Audiobooks"
+                },
+                {
+                    "id": "18580535011",
+                    "name": "Romantic Suspense",
+                    "slug": "Romantic-Suspense-Audiobooks"
+                }
+            ]
+        },
+        {
+            "id": "18580540011",
+            "name": "Science & Engineering",
+            "slug": "Science-Engineering-Audiobooks",
+            "subcategories": [
+                {
+                    "id": "18580541011",
+                    "name": "Astronomy & Space Science",
+                    "slug": "Astronomy-Space-Science-Audiobooks"
+                },
+                {
+                    "id": "18580552011",
+                    "name": "Biology",
+                    "slug": "Biology-Audiobooks"
+                },
+                {
+                    "id": "18580580011",
+                    "name": "Physics",
+                    "slug": "Physics-Audiobooks"
+                },
+                {
+                    "id": "18580605011",
+                    "name": "Technology & Engineering",
+                    "slug": "Technology-Engineering-Audiobooks"
+                }
+            ]
+        },
+        {
+            "id": "18580606011",
+            "name": "Science Fiction & Fantasy",
+            "slug": "Science-Fiction-Fantasy-Audiobooks",
+            "subcategories": [
+                {
+                    "id": "18580607011",
+                    "name": "Fantasy",
+                    "slug": "Fantasy-Audiobooks"
+                },
+                {
+                    "id": "18580608011",
+                    "name": "Epic Fantasy",
+                    "slug": "Epic-Fantasy-Audiobooks"
+                },
+                {
+                    "id": "18580617011",
+                    "name": "Urban Fantasy",
+                    "slug": "Urban-Fantasy-Audiobooks"
+                },
+                {
+                    "id": "18580628011",
+                    "name": "Science Fiction",
+                    "slug": "Science-Fiction-Audiobooks"
+                },
+                {
+                    "id": "18580629011",
+                    "name": "Dystopian",
+                    "slug": "Dystopian-Audiobooks"
+                },
+                {
+                    "id": "18580639011",
+                    "name": "Space Opera",
+                    "slug": "Space-Opera-Audiobooks"
+                },
+                {
+                    "id": "18580645011",
+                    "name": "Time Travel",
+                    "slug": "Time-Travel-Audiobooks"
+                }
+            ]
+        },
+        {
+            "id": "18580648011",
+            "name": "Sports & Outdoors",
+            "slug": "Sports-Outdoors-Audiobooks",
+            "subcategories": [
+                {
+                    "id": "18580649011",
+                    "name": "Baseball",
+                    "slug": "Baseball-Audiobooks"
+                },
+                {
+                    "id": "18580679011",
+                    "name": "Basketball",
+                    "slug": "Basketball-Audiobooks"
+                },
+                {
+                    "id": "18580697011",
+                    "name": "Football",
+                    "slug": "Football-Audiobooks"
+                },
+                {
+                    "id": "18580713011",
+                    "name": "Outdoors & Nature",
+                    "slug": "Outdoors-Nature-Audiobooks"
+                }
+            ]
+        },
+        {
+            "id": "18580715011",
+            "name": "Teen & Young Adult",
+            "slug": "Teen-Young-Adult-Audiobooks",
+            "subcategories": [
+                {
+                    "id": "18580716011",
+                    "name": "Action & Adventure",
+                    "slug": "Teen-Action-Adventure-Audiobooks"
+                },
+                {
+                    "id": "18580768011",
+                    "name": "Fantasy",
+                    "slug": "Teen-Fantasy-Audiobooks"
+                },
+                {
+                    "id": "18580790011",
+                    "name": "Romance",
+                    "slug": "Teen-Romance-Audiobooks"
+                },
+                {
+                    "id": "18581055011",
+                    "name": "Science Fiction",
+                    "slug": "Teen-Science-Fiction-Audiobooks"
+                }
+            ]
+        },
+        {
+            "id": "18581095011",
+            "name": "Travel & Tourism",
+            "slug": "Travel-Tourism-Audiobooks",
+            "subcategories": []
+        }
+    ]
+}
