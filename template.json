@@ -2,7 +2,7 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "id": "audible-us-catalogue",
     "name": "Audible US",
-    "version": "2.0.4",
+    "version": "2.0.5",
     "description": "Complete Audible US audiobook catalogue with all categories, bestsellers, new releases, and trending",
     "author": "Audiobook Player Community",
     "attribution": "Powered by Audiobook Meta",
@@ -32,7 +32,7 @@
         {
             "id": "popular",
             "name": "Popular",
-            "param": "Popularity"
+            "param": "BestSellers"
         },
         {
             "id": "newest",
